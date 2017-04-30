@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Intially all the board positions have not beeen played.
     int[] gameState = {3,3,3,3,3,3,3,3,3};
-    int[][] winningStates = {{0,1,2},{3,4,5},{6,7,8},{0,3,7},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
+    int[][] winningStates = {{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
 
     public void selectPosition(View view){
         ImageView piece = (ImageView) view;
@@ -73,12 +73,9 @@ public class MainActivity extends AppCompatActivity {
                         if(state == 3){
                             gameOver = false;
                         }
-                        else{
-                            gameOver = true;
-                        }
                     }
                     if(gameOver){
-                        gameIsActive = false;
+                        //gameIsActive = false;
                         TextView winnerMessage = (TextView) findViewById(R.id.gameMessage);
                         winnerMessage.setText("DRAW!");
 
